@@ -1,0 +1,30 @@
+%DEMUX 1-TO-8
+function [D0,D1,D2,D3,D4,D5,D6,D7]=demux18(S2,S1,S0,in)
+sel2=not(S2);
+sel1=not(S1);
+sel0=not(S0);
+a=and(sel2,sel1);
+b=and(sel0,in);
+D0=and(a,b);
+c=and(sel2,sel1);
+d=and(S0,in);
+D1=and(c,d);
+e=and(sel2,S1);
+f=and(sel0,in);
+D2=and(e,f);
+g=and(sel2,S1);
+h=and(S0,in);
+D3=and(g,h);
+i=and(S2,sel1);
+j=and(sel0,in);
+D4=and(i,j);
+k=and(S2,sel1);
+l=and(S0,in);
+D5=and(k,l);
+m=and(S2,S1);
+n=and(sel0,in);
+D6=and(m,n);
+o=and(S2,S1);
+p=and(S0,in);
+D7=and(o,p);
+end

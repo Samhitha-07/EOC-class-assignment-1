@@ -1,0 +1,6 @@
+% MUX 8-TO-1
+function f=Mux81(S0,S1,S2,D0,D1,D2,D3,D4,D5,D6,D7)
+f1=MUX41(S0,S1,D0,D1,D2,D3);
+f2=MUX41(S0,S1,D4,D5,D6,D7);
+f=MUX21(S2,f1,f2);
+end
